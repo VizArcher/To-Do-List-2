@@ -2,7 +2,7 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const date = require(__dirname + "/date.js");
+//const date = require(__dirname + "/date.js");
 const mongoose = require('mongoose');
 const _ = require('lodash') ;
 
@@ -118,7 +118,7 @@ app.post("/delete", function (req, res) {
 
 }) ;
 
-app.get("/:customListName", function (req, res) {
+app.get("/list/:customListName", function (req, res) {
   const customListName = _.capitalize(req.params.customListName);
 
   List.findOne({ name: customListName })
